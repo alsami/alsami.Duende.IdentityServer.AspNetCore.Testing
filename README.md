@@ -6,11 +6,11 @@
 ![Nuget](https://img.shields.io/nuget/dt/alsami.Duende.IdentityServer.AspNetCore.Testing)
 ![Nuget](https://img.shields.io/nuget/v/alsami.Duende.IdentityServer.AspNetCore.Testing)
 
-This library serves as a testing framework for [Duende.IdentityServer](https://duendesoftware.com/products/identityserver) using [Microsoft.AspNetCore.Mvc.Testing](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-3.1) and makes it easy to test your web-applications in combination with `Duende.IdentityServer`.
+This library serves as a testing framework for [Duende.IdentityServer](https://duendesoftware.com/products/identityserver) using [Microsoft.AspNetCore.TestHost](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests) and makes it easy to test your web-applications in combination with `Duende.IdentityServer`.
 
 ## Usage
 
-This library is supposed to be used within test-projects. Please checkout the [prerequisites](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-2.2#test-app-prerequisites) described by Microsoft.
+This library is supposed to be used within test-projects. Please checkout the [prerequisites](https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-6.0#test-app-prerequisites) described by Microsoft.
 
 Check out the [docs](docs/) for more information about the usage!
 
