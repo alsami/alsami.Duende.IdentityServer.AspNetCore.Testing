@@ -22,6 +22,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <None Include="../../icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
         <PackageReference Include="Duende.IdentityServer" Version="6.0.1" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.1" />
