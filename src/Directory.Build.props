@@ -1,7 +1,5 @@
 <Project>
   <PropertyGroup>
-      <Nullable>enable</Nullable>
-      <ImplicitUsings>enable</ImplicitUsings>
       <IsPackable>true</IsPackable>
       <Copyright>2022©Sami Al Khatib</Copyright>
       <Authors>Sami Al Khatib</Authors>
@@ -16,7 +14,6 @@
       <Version>6.0.0</Version>
       <FileVersion>6.0.0</FileVersion>
       <EmbedAllSources>true</EmbedAllSources>
-      <NoWarn>S3881</NoWarn>
   </PropertyGroup>
 
     <ItemGroup>
