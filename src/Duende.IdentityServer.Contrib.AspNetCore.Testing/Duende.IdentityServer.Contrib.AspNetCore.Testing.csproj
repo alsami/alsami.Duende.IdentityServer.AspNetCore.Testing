@@ -9,7 +9,7 @@
         <Authors>Sami Al Khatib</Authors>
         <Description>OpenID Connect and OAuth 2.0 Testing-Framework for ASP.NET Core and Duende.IdentityServer</Description>
         <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;Duende.IdentityServer;AspNetCore;AspNetCore Testing;IntegrationTesting;Testing;IdentityServer Proxy;</PackageTags>
-        <PackageIcon>icon.jpg</PackageIcon>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageProjectUrl>https://github.com/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReleaseNotes>https://github.com/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
