@@ -1,7 +1,7 @@
 # Duende.IdentityServer.Contrib.AspNetCore.Testing
 
 [![CI](https://github.com/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing/actions/workflows/push.yml/badge.svg?branch=main)](https://github.com/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing/actions/workflows/push.yml)
-[![codecov](https://codecov.io/gh/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing/branch/master/graph/badge.svg)](https://codecov.io/gh/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing)
+[![codecov](https://codecov.io/gh/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing/branch/main/graph/badge.svg?token=cQHpUoEnYt)](https://codecov.io/gh/alsami/Duende.IdentityServer.Contrib.AspNetCore.Testing)
 
 [![NuGet](https://img.shields.io/nuget/dt/Duende.IdentityServer.Contrib.AspNetCore.Testing.svg)](https://www.nuget.org/packages/Duende.IdentityServer.Contrib.AspNetCore.Testing)
 [![NuGet](https://img.shields.io/nuget/vpre/Duende.IdentityServer.Contrib.AspNetCore.Testing.svg)](https://www.nuget.org/packages/Duende.IdentityServer.Contrib.AspNetCore.Testing)
