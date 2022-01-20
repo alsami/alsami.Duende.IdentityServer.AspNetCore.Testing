@@ -1,0 +1,73 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{171C9B08-8431-4E4C-A343-CA8D277A2419}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{FED78C85-8EE1-4C8E-9758-44CAF0070C10}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Duende.IdentityServer.Contrib.AspNetCore.Testing", "src\Duende.IdentityServer.Contrib.AspNetCore.Testing\Duende.IdentityServer.Contrib.AspNetCore.Testing.csproj", "{5169FE1E-64A2-4BF0-9DA0-2480107FD444}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{E2FB8DD0-B811-4E10-ADD0-1CA4E934EBAD}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		changelog.md = changelog.md
+		LICENSE = LICENSE
+		publish-packages.sh = publish-packages.sh
+		README.md = README.md
+		global.json = global.json
+		test.sh = test.sh
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Duende.IdentityServer.Contrib.AspNetCore.Testing.Tests", "test\Duende.IdentityServer.Contrib.AspNetCore.Testing.Tests\Duende.IdentityServer.Contrib.AspNetCore.Testing.Tests.csproj", "{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duende.IdentityServer.Server", "test\Duende.IdentityServer.Server\Duende.IdentityServer.Server.csproj", "{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duende.IdentityServer.Api", "test\Duende.IdentityServer.Api\Duende.IdentityServer.Api.csproj", "{CBDE7CC3-DC74-44CE-86E7-6A902504B227}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{4D0745D0-8182-488D-8E06-403D9EC57785}"
+ProjectSection(SolutionItems) = preProject
+	docs\IdentityServerTestWebHostBuilder.md = docs\IdentityServerTestWebHostBuilder.md
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5169FE1E-64A2-4BF0-9DA0-2480107FD444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5169FE1E-64A2-4BF0-9DA0-2480107FD444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5169FE1E-64A2-4BF0-9DA0-2480107FD444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5169FE1E-64A2-4BF0-9DA0-2480107FD444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBDE7CC3-DC74-44CE-86E7-6A902504B227}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDE7CC3-DC74-44CE-86E7-6A902504B227}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDE7CC3-DC74-44CE-86E7-6A902504B227}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDE7CC3-DC74-44CE-86E7-6A902504B227}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5169FE1E-64A2-4BF0-9DA0-2480107FD444} = {171C9B08-8431-4E4C-A343-CA8D277A2419}
+		{4EB5ED1E-87BA-4E7A-AE4E-CDAA8923483A} = {FED78C85-8EE1-4C8E-9758-44CAF0070C10}
+		{C5F387EC-B6A4-4A5C-8C35-9411CE71B35A} = {FED78C85-8EE1-4C8E-9758-44CAF0070C10}
+		{CBDE7CC3-DC74-44CE-86E7-6A902504B227} = {FED78C85-8EE1-4C8E-9758-44CAF0070C10}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {48382009-29CD-4CBF-89FA-DF1D15D7B8FE}
+	EndGlobalSection
+EndGlobal
