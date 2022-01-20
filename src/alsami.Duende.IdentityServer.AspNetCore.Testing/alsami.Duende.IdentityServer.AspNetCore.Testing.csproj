@@ -19,10 +19,12 @@
         <FileVersion>6.0.1</FileVersion>
         <EmbedAllSources>true</EmbedAllSources>
         <NoWarn>S3881</NoWarn>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
     </PropertyGroup>
 
     <ItemGroup>
         <None Include="../../icon.png" Pack="true" PackagePath="\" />
+        <None Include="../../README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
 
     <ItemGroup>
