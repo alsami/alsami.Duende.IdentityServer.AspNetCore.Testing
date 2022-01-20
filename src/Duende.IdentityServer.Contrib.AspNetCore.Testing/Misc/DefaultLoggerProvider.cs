@@ -20,5 +20,6 @@ internal class DefaultLoggerProvider : ILoggerProvider
     public void Dispose()
     {
         this.loggerFactory.Dispose();
+        GC.SuppressFinalize(this);
     }
 }
