@@ -1,4 +1,4 @@
-# [6.0.1](https://www.nuget.org/packages/Duende.IdentityServer.Contrib.AspNetCore.Testing/6.0.1) (2022-01-20)
+# [6.0.1](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.0.1) (2022-01-20)
 
 ## General information
 
