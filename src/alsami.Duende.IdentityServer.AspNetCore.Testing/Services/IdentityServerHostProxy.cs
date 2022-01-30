@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Services;
 
-public sealed class IdentityServerHostProxy : AbstractIdentityServerProxy, IAsyncDisposable
+public sealed class IdentityServerHostProxy : AbstractIdentityServerProxy, IAsyncDisposable, IDisposable
 {
     private readonly IHost host;
 
@@ -18,8 +18,11 @@ public sealed class IdentityServerHostProxy : AbstractIdentityServerProxy, IAsyn
 
     public async ValueTask DisposeAsync()
     {
-        if (this.host is null) return;
-
         await this.host.StopAsync();
+    }
+
+    public void Dispose()
+    {
+        this.host.StopAsync().GetAwaiter().GetResult();
     }
 }
