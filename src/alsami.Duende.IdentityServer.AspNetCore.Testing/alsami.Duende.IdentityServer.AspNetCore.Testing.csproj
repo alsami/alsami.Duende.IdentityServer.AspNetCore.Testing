@@ -15,8 +15,8 @@
         <PackageReleaseNotes>https://github.com/alsami/alsami.Duende.IdentityServer.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>git://github.com/alsami/alsami.Duende.IdentityServer.AspNetCore.Testing</RepositoryUrl>
-        <Version>6.0.1</Version>
-        <FileVersion>6.0.1</FileVersion>
+        <Version>6.0.2</Version>
+        <FileVersion>6.0.2</FileVersion>
         <EmbedAllSources>true</EmbedAllSources>
         <NoWarn>S3881</NoWarn>
     </PropertyGroup>

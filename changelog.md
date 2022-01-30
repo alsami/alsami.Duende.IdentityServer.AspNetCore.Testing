@@ -1,3 +1,10 @@
+# [6.0.2](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.0.2) (2022-01-30)
+
+## Features
+
+* Upgrade `Duende.IdentityServer` to `6.0.3`
+* Implement `IDisposeable` in `IdentityServerHostProxy`
+
 # [6.0.1](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.0.1) (2022-01-20)
 
 ## General information
