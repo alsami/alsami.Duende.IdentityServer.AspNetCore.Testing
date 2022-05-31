@@ -1,3 +1,9 @@
+# [6.1.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.1.0) (2022-05-31)
+
+## Features
+
+* Upgrade `Duende.IdentityServer` to `6.1.0`
+
 # [6.0.3](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.0.3) (2022-02-07)
 
 ## Features
