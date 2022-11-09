@@ -1,3 +1,10 @@
+# [6.2.0-preview.1](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.2.0-preview.1) (2022-11-09)
+
+## Features
+
+* Add support for `.NET 7`
+* Upgrade `Duende.IdentityServer` to `6.2.0-preview.1`
+
 # [6.1.1](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/6.1.1) (2022-09-15)
 
 ## Features
