@@ -1,16 +1,23 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <IsPackable>false</IsPackable>
         <IsTestProject>true</IsTestProject>
         <NoWarn>$(NoWarn);S2699</NoWarn>
     </PropertyGroup>
 
+    <ItemGroup Condition="$(TargetFramework) == 'net6.0'">
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework) == 'net7.0'">
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+    </ItemGroup>
+
     <ItemGroup>
         <FrameworkReference Include="Microsoft.AspNetCore.App" />
         <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
         <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
         <PackageReference Include="Serilog.Sinks.Console" Version="4.1.0" />
