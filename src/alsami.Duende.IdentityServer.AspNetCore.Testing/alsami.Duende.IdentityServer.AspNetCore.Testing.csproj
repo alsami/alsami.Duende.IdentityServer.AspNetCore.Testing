@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
         <IsPackable>true</IsPackable>
-        <Copyright>2022©Sami Al Khatib</Copyright>
+        <Copyright>2023©Sami Al Khatib</Copyright>
         <Authors>Sami Al Khatib</Authors>
         <Description>OpenID Connect and OAuth 2.0 Testing-Framework for ASP.NET Core and Duende.IdentityServer</Description>
         <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;Duende.IdentityServer;AspNetCore;AspNetCore Testing;IntegrationTesting;Testing;IdentityServer Proxy;</PackageTags>
@@ -22,13 +22,13 @@
     <ItemGroup>
         <None Include="../../icon.png" Pack="true" PackagePath="\" />
     </ItemGroup>
+
+    <ItemGroup Condition="$(TargetFramework) == 'net7.0'">
+        <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="7.0.2" />
+    </ItemGroup>
     
     <ItemGroup Condition="$(TargetFramework) == 'net6.0'">
         <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="6.0.0" />
-    </ItemGroup>
-
-    <ItemGroup Condition="$(TargetFramework) == 'net7.0'">
-        <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="7.0.0" />
     </ItemGroup>
 
     <ItemGroup>

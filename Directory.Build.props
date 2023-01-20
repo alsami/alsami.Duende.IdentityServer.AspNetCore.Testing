@@ -3,11 +3,11 @@
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <LangVersion>11.0</LangVersion>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.49.0.57237">
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.51.0.59060">
             <PrivateAssets>all</PrivateAssets>
         </PackageReference>
     </ItemGroup>
