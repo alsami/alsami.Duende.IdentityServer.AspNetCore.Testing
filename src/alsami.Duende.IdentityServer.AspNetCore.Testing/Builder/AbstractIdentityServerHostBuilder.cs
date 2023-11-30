@@ -194,7 +194,9 @@ public abstract class AbstractIdentityServerHostBuilder<TBuilder>
         {
             foreach (var scopeName in apiResource.Scopes)
             {
-                if (!this.internalApiScopes.Any(s => s.Name == scopeName))
+#pragma warning disable S6603
+                if (this.internalApiScopes.All(s => s.Name != scopeName))
+#pragma warning restore S6603
                 {
                     throw new InvalidOperationException(
                         $"Resource {apiResource.Name} contains scope {scopeName} not found in ApiScopes");

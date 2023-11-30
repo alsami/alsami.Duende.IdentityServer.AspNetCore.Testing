@@ -20,7 +20,7 @@ internal class IdentityServerEventCaptureStore
 
     public Event? GetById(int id)
     {
-        return this.events.FirstOrDefault(e => e.Id == id);
+        return this.events.Find(e => e.Id == id);
     }
 
     public IEnumerable<Event> GetEvents()
@@ -30,7 +30,7 @@ internal class IdentityServerEventCaptureStore
 
     public bool ContainsEventType(EventTypes eventType)
     {
-        var @event = this.events.FirstOrDefault(e => e.EventType == eventType);
+        var @event = this.events.Find(e => e.EventType == eventType);
         return @event != null;
     }
 
@@ -47,7 +47,7 @@ internal class IdentityServerEventCaptureStore
     {
         if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException(nameof(value));
 
-        var matchingEvents = this.events.Where(e => e.Message.StartsWith(value, comparison));
+        var matchingEvents = this.events.Where(e => e.Message is not null && e.Message.StartsWith(value, comparison));
         return matchingEvents.Any();
     }
 }

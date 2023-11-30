@@ -12,83 +12,82 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
-namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Tests
+namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Tests;
+
+public class IdentityServerHostProxyTests
 {
-    public class IdentityServerHostProxyTests
+    [Fact]
+    public async Task GetDiscoverResponseAsync_ValidConfiguration_Succeeds()
     {
-        [Fact]
-        public async Task GetDiscoverResponseAsync_ValidConfiguration_Succeeds()
+        var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
+
+        var client = new Client
         {
-            var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
-
-            var client = new Client
+            ClientId = clientConfiguration.Id,
+            ClientSecrets = new List<Secret>
             {
-                ClientId = clientConfiguration.Id,
-                ClientSecrets = new List<Secret>
-                {
-                    new(clientConfiguration.Secret.Sha256())
-                },
-                AllowedScopes = new[] {"api1"},
-                AllowedGrantTypes = new[] {GrantType.ClientCredentials},
-                AccessTokenType = AccessTokenType.Jwt,
-                AccessTokenLifetime = 7200
-            };
+                new(clientConfiguration.Secret.Sha256())
+            },
+            AllowedScopes = new[] {"api1"},
+            AllowedGrantTypes = new[] {GrantType.ClientCredentials},
+            AccessTokenType = AccessTokenType.Jwt,
+            AccessTokenLifetime = 7200
+        };
 
-            var hostBuilder = new IdentityServerTestHostBuilder()
-                .AddClients(client)
-                .AddApiResources(new ApiResource("api1", "api1name"))
-                .AddApiScopes(new ApiScope("api1"))
-                .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
+        var hostBuilder = new IdentityServerTestHostBuilder()
+            .AddClients(client)
+            .AddApiResources(new ApiResource("api1", "api1name"))
+            .AddApiScopes(new ApiScope("api1"))
+            .CreateHostBuilder(new AutofacServiceProviderFactory(), ContainerBuilderConfiguration.ConfigureContainer);
 
-            var identityServerProxy = new IdentityServerHostProxy(hostBuilder);
+        var identityServerProxy = new IdentityServerHostProxy(hostBuilder);
 
-            var response = await identityServerProxy.GetDiscoverResponseAsync();
+        var response = await identityServerProxy.GetDiscoverResponseAsync();
 
-            Assert.NotNull(response);
-        }
-        
-        [Fact]
-        public async Task IdentityServerProxy_GetClientCredentialsAsync_Authorize_Api_Succeeds()
+        Assert.NotNull(response);
+    }
+
+    [Fact]
+    public async Task IdentityServerProxy_GetClientCredentialsAsync_Authorize_Api_Succeeds()
+    {
+        var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
+
+        var client = new Client
         {
-            var clientConfiguration = new ClientConfiguration("MyClient", "MySecret");
-
-            var client = new Client
+            ClientId = clientConfiguration.Id,
+            ClientSecrets = new List<Secret>
             {
-                ClientId = clientConfiguration.Id,
-                ClientSecrets = new List<Secret>
-                {
-                    new(clientConfiguration.Secret.Sha256())
-                },
-                AllowedScopes = new[] {"api1"},
-                AllowedGrantTypes = new[] {GrantType.ClientCredentials},
-                AccessTokenType = AccessTokenType.Jwt,
-                AccessTokenLifetime = 7200
-            };
+                new(clientConfiguration.Secret.Sha256())
+            },
+            AllowedScopes = new[] {"api1"},
+            AllowedGrantTypes = new[] {GrantType.ClientCredentials},
+            AccessTokenType = AccessTokenType.Jwt,
+            AccessTokenLifetime = 7200
+        };
 
-            var webHostBuilder = new IdentityServerTestHostBuilder()
-                .AddClients(client)
-                .AddApiResources(new ApiResource("api1", "api1name"))
-                .AddApiScopes(new ApiScope("api1"))
-                .CreateHostBuilder();
+        var webHostBuilder = new IdentityServerTestHostBuilder()
+            .AddClients(client)
+            .AddApiResources(new ApiResource("api1", "api1name"))
+            .AddApiScopes(new ApiScope("api1"))
+            .CreateHostBuilder();
 
-            var identityServerProxy = new IdentityServerHostProxy(webHostBuilder);
+        var identityServerProxy = new IdentityServerHostProxy(webHostBuilder);
 
-            var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration, "api1");
+        var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration, "api1");
 
-            var apiWebHostBuilder = WebHost.CreateDefaultBuilder()
-                .ConfigureServices(services =>
-                    services.AddSingleton(identityServerProxy.IdentityServer.CreateHandler()))
-                .UseStartup<Startup>();
+        var apiWebHostBuilder = WebHost.CreateDefaultBuilder()
+            .ConfigureServices(services =>
+                services.AddSingleton(identityServerProxy.IdentityServer.CreateHandler()))
+            .UseStartup<Startup>();
 
-            var apiServer = new TestServer(apiWebHostBuilder);
+        var apiServer = new TestServer(apiWebHostBuilder);
 
-            var apiClient = apiServer.CreateClient();
+        var apiClient = apiServer.CreateClient();
 
-            apiClient.SetBearerToken(tokenResponse.AccessToken);
+        apiClient.SetBearerToken(tokenResponse.AccessToken!);
 
-            var apiResponse = await apiClient.GetAsync("api/auth");
+        var apiResponse = await apiClient.GetAsync("api/auth");
 
-            Assert.True(apiResponse.IsSuccessStatusCode, "should have been authenticated!");
-        }
+        Assert.True(apiResponse.IsSuccessStatusCode, "should have been authenticated!");
     }
 }

@@ -1,10 +1,9 @@
-namespace Duende.IdentityServer.Api
+namespace Duende.IdentityServer.Api;
+
+public static class Program
 {
-    public static class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
             throw new NotImplementedException("This application is not meant to be run manually!");
         }
-    }
 }

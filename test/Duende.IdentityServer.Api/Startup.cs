@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace Duende.IdentityServer.Api
-{
-    public class Startup
-    {
-        private readonly HttpMessageHandler identityServerMessageHandler;
+namespace Duende.IdentityServer.Api;
 
-        public Startup(HttpMessageHandler identityServerMessageHandler)
-        {
+public class Startup
+{
+    private readonly HttpMessageHandler identityServerMessageHandler;
+
+    public Startup(HttpMessageHandler identityServerMessageHandler)
+    {
             this.identityServerMessageHandler = identityServerMessageHandler;
         }
 
-        public void ConfigureServices(IServiceCollection services)
-        {
+    public void ConfigureServices(IServiceCollection services)
+    {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -24,12 +24,11 @@ namespace Duende.IdentityServer.Api
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
-        public void Configure(IApplicationBuilder app)
-        {
+    public void Configure(IApplicationBuilder app)
+    {
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(builder => builder.MapControllers().RequireAuthorization());
         }
-    }
 }

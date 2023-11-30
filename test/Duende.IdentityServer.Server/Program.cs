@@ -1,36 +1,19 @@
-﻿using System.Reflection;
-using Microsoft.AspNetCore;
-using Serilog;
-using Serilog.Sinks.SystemConsole.Themes;
+﻿using Microsoft.AspNetCore;
 
-namespace Duende.IdentityServer.Server
+namespace Duende.IdentityServer.Server;
+
+public static class Program
 {
-    public static class Program
+    public static async Task Main(string[] args)
     {
-        public static Task Main(string[] args)
-        {
-            using var host = CreateWebHostBuilder(args).Build();
+        using var host = CreateWebHostBuilder(args).Build();
+        await host.RunAsync();
+    }
 
-            return host.RunAsync();
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] _)
-        {
-            return WebHost.CreateDefaultBuilder()
-                .UseStartup<Startup>()
-                .UseSerilog(ConfigureLogger);
-        }
-
-        private static void ConfigureLogger(WebHostBuilderContext hostContext, LoggerConfiguration loggerConfiguration)
-        {
-            loggerConfiguration.Enrich.FromLogContext()
-                .MinimumLevel.Debug()
-                .WriteTo.RollingFile(Path.Combine(AppContext.BaseDirectory, "Logs",
-                    $"{Assembly.GetExecutingAssembly().GetName().Name}.log"))
-                .WriteTo.Console(
-                    outputTemplate:
-                    "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}",
-                    theme: AnsiConsoleTheme.Literate);
-        }
+    public static IWebHostBuilder CreateWebHostBuilder(string[] _)
+    {
+        return WebHost
+            .CreateDefaultBuilder()
+            .UseStartup<Startup>();
     }
 }
