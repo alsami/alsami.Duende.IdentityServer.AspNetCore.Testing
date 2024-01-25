@@ -1,3 +1,14 @@
+# [7.0.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/7.0.0) (2024-01-25)
+
+## Chores
+
+* Update to latest version of `Duende.IdentityServer` with version `7.0.0`
+* Update all other dependencies
+
+## Breaking changes
+
+* Drop support for `.NET 6` and `.NET 7` to align with `Duende.IdentityServer`
+
 # [7.0.0-alpha.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/7.0.0-alpha.0) (2023-11-30)
 
 ## Breaking changes
