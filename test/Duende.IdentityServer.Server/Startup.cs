@@ -8,6 +8,7 @@ namespace Duende.IdentityServer.Server;
 
 public class Startup
 {
+#pragma warning disable S2325
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddLogging().AddSerilog(ConfigureLogger);
@@ -44,6 +45,8 @@ public class Startup
             return Task.CompletedTask;
         });
     }
+    
+#pragma warning restore S2325
 
     private static void ConfigureLogger(LoggerConfiguration loggerConfiguration)
     {

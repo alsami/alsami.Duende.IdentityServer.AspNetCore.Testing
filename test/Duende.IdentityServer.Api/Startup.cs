@@ -24,11 +24,13 @@ public class Startup
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
+#pragma warning disable S2325
     public void Configure(IApplicationBuilder app)
+#pragma warning restore S2325
     {
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(builder => builder.MapControllers().RequireAuthorization());
-        }
+    }
 }
