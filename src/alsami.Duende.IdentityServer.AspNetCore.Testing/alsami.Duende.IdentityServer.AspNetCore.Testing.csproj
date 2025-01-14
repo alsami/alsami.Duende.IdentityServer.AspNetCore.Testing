@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
         <IsPackable>true</IsPackable>
-        <Copyright>2024©Sami Al Khatib</Copyright>
+        <Copyright>2025©Sami Al Khatib</Copyright>
         <Authors>Sami Al Khatib</Authors>
         <Description>OpenID Connect and OAuth 2.0 Testing-Framework for ASP.NET Core and Duende.IdentityServer</Description>
         <PackageTags>OAuth2;OAuth 2.0;OpenID Connect;Security;Identity;IdentityServer;Duende.IdentityServer;AspNetCore;AspNetCore Testing;IntegrationTesting;Testing;IdentityServer Proxy;</PackageTags>
@@ -13,8 +13,8 @@
         <PackageReleaseNotes>https://github.com/alsami/alsami.Duende.IdentityServer.AspNetCore.Testing/blob/master/changelog.md</PackageReleaseNotes>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>git://github.com/alsami/alsami.Duende.IdentityServer.AspNetCore.Testing</RepositoryUrl>
-        <Version>8.0.0</Version>
-        <FileVersion>8.0.0</FileVersion>
+        <Version>8.1.0</Version>
+        <FileVersion>8.1.0</FileVersion>
         <EmbedAllSources>true</EmbedAllSources>
         <NoWarn>$(NoWarn);S3881</NoWarn>
     </PropertyGroup>
