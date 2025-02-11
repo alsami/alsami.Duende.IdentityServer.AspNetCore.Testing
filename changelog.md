@@ -1,4 +1,10 @@
-# [8.1.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/7.0.0) (2025-01-14)
+# [8.2.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/8.2.0) (2025-01-14)
+
+## Chores
+
+* Full update to latest version of `Duende.IdentityServer` with version `7.1.0`. Please see the minor breaking changes listed [here](https://github.com/DuendeSoftware/products/releases/tag/is/7.1.0)
+
+# [8.1.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/8.1.0) (2025-01-14)
 
 ## Chores
 

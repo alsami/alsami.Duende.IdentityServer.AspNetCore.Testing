@@ -1,7 +1,7 @@
 using alsami.Duende.IdentityServer.AspNetCore.Testing.Configuration;
+using Duende.IdentityModel;
+using Duende.IdentityModel.Client;
 using Duende.IdentityServer.Models;
-using IdentityModel;
-using IdentityModel.Client;
 using Microsoft.AspNetCore.TestHost;
 
 namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Services;

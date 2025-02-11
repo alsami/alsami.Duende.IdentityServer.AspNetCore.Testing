@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
+using Duende.IdentityModel;
 using Duende.IdentityServer.Models;
 using Duende.IdentityServer.Services;
-using IdentityModel;
 
 namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Tests.Services;
 
