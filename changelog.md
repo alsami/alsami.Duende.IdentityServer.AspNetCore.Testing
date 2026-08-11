@@ -1,3 +1,11 @@
+# [9.0.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/9.0.0) (2026-08-11)
+
+## Breaking changes
+
+* Update to .NET 10
+* Update all other dependencies
+* Update `Duende.IdentityServer` to latest version `8.x.x`. See breaking changes of this release [here](https://github.com/DuendeSoftware/products/releases/tag/is-8.0.0)
+
 # [8.4.0](https://www.nuget.org/packages/alsami.Duende.IdentityServer.AspNetCore.Testing/8.4.0) (2025-08-19)
 
 ## Chores
