@@ -7,7 +7,7 @@ namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Tests.Validators;
 
 public class SimpleResourceOwnerPasswordValidator : IResourceOwnerPasswordValidator
 {
-    public Task ValidateAsync(ResourceOwnerPasswordValidationContext context)
+    public Task ValidateAsync(ResourceOwnerPasswordValidationContext context, CancellationToken ct)
     {
         if (context.UserName != "user" || context.Password != "password")
         {

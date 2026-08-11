@@ -6,8 +6,8 @@ public static class TestUsers
 {
     public static List<TestUser> GeTestUsers()
     {
-        return new List<TestUser>
-        {
+        return
+        [
             new()
             {
                 Username = "user1",
@@ -15,6 +15,6 @@ public static class TestUsers
                 IsActive = true,
                 SubjectId = "user1"
             }
-        };
+        ];
     }
 }

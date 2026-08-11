@@ -94,7 +94,7 @@ public abstract class AbstractIdentityServerProxy
         using var client = new HttpClient(proxy);
 
         return await ExecuteResourceOwnerAccessTokenRequestAsync(client, discoveryResponse,
-            clientConfiguration, userLoginConfiguration, parameters, Array.Empty<string>());
+            clientConfiguration, userLoginConfiguration, parameters, []);
     }
 
     public async Task<TokenResponse> GetRefreshTokenAsync(ClientConfiguration clientConfiguration,
@@ -122,7 +122,7 @@ public abstract class AbstractIdentityServerProxy
         using var client = new HttpClient(proxy);
 
         return await ExecuteRefreshAccessTokenRequestAsync(client, discoveryResponse, clientConfiguration,
-            refreshToken, parameters, Array.Empty<string>());
+            refreshToken, parameters, []);
     }
 
     public async Task<UserInfoResponse> GetUserInfoAsync(string accessToken)

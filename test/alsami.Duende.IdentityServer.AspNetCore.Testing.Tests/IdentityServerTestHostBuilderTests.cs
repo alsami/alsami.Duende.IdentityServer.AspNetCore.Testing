@@ -103,8 +103,10 @@ public class IdentityServerTestHostBuilderTests
     [Fact]
     public void CreateHostBuilder_ValidateScopes()
     {
-        var apiResource = new ApiResource("res1");
-        apiResource.Scopes = new List<string> { "scope1", "scope3" };
+        var apiResource = new ApiResource("res1")
+        {
+            Scopes = new List<string> { "scope1", "scope3" }
+        };
         // Bad scope specs
         Assert.Throws<InvalidOperationException>(() => new IdentityServerTestHostBuilder()
             .AddApiResources(apiResource)
@@ -140,8 +142,8 @@ public class IdentityServerTestHostBuilderTests
             {
                 new(clientConfiguration.Secret.Sha256())
             },
-            AllowedScopes = new[] {"api1"},
-            AllowedGrantTypes = new[] {GrantType.ClientCredentials},
+            AllowedScopes = ["api1"],
+            AllowedGrantTypes = [GrantType.ClientCredentials],
             AccessTokenType = AccessTokenType.Jwt,
             AccessTokenLifetime = 7200
         };

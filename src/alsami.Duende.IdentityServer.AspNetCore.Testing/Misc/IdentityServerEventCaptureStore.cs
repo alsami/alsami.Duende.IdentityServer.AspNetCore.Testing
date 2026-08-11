@@ -8,7 +8,7 @@ internal class IdentityServerEventCaptureStore
 
     public IdentityServerEventCaptureStore()
     {
-        this.events = new List<Event>();
+        this.events = [];
     }
 
     public void AddEvent(Event @event)

@@ -27,10 +27,9 @@ public class Startup
             .AddTestUsers(TestUsers.GeTestUsers())
             .AddInMemoryClients(Clients.GetClients)
             .AddInMemoryApiResources(ApiResources.GetApiResources)
-            .AddInMemoryApiScopes(new[]
-            {
-                new ApiScope("api1"),
-            })
+            .AddInMemoryApiScopes([
+                new ApiScope("api1")
+            ])
             .AddInMemoryIdentityResources(ApiIdentityResources.GetIdentityResources);
     }
 

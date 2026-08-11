@@ -7,7 +7,7 @@ namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Tests.Validators;
 
 public class ExtensionsGrantValidator : IExtensionGrantValidator
 {
-    public Task ValidateAsync(ExtensionGrantValidationContext context)
+    public Task ValidateAsync(ExtensionGrantValidationContext context, CancellationToken ct)
     {
         if (context.Request.Raw["username"] != "user" || context.Request.Raw["password"] != "password")
         {

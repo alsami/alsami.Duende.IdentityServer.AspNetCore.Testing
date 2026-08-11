@@ -75,12 +75,16 @@ public class IdentityServerHostProxyTests
 
         var tokenResponse = await identityServerProxy.GetClientAccessTokenAsync(clientConfiguration, "api1");
 
+#pragma warning disable ASPDEPR008
         var apiWebHostBuilder = WebHost.CreateDefaultBuilder()
+#pragma warning restore ASPDEPR008
             .ConfigureServices(services =>
                 services.AddSingleton(identityServerProxy.IdentityServer.CreateHandler()))
             .UseStartup<Startup>();
 
+#pragma warning disable ASPDEPR008
         var apiServer = new TestServer(apiWebHostBuilder);
+#pragma warning restore ASPDEPR008
 
         var apiClient = apiServer.CreateClient();
 

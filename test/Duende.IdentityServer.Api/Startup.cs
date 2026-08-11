@@ -7,9 +7,9 @@ public class Startup
     private readonly HttpMessageHandler identityServerMessageHandler;
 
     public Startup(HttpMessageHandler identityServerMessageHandler)
-    {
-            this.identityServerMessageHandler = identityServerMessageHandler;
-        }
+    { 
+        this.identityServerMessageHandler = identityServerMessageHandler;
+    }
 
     public void ConfigureServices(IServiceCollection services)
     {
@@ -21,7 +21,7 @@ public class Startup
                     options.BackchannelHttpHandler = this.identityServerMessageHandler;
                     options.TokenValidationParameters.ValidateAudience = false;
                 });
-            services.AddMvc(options => options.EnableEndpointRouting = false);
+            services.AddMvc(options => options.EnableEndpointRouting = true);
         }
 
 #pragma warning disable S2325

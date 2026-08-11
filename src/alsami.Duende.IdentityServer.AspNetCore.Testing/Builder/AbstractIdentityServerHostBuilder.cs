@@ -12,10 +12,10 @@ namespace alsami.Duende.IdentityServer.AspNetCore.Testing.Builder;
 public abstract class AbstractIdentityServerHostBuilder<TBuilder>
     where TBuilder : AbstractIdentityServerHostBuilder<TBuilder>
 {
-    private readonly List<ApiResource> internalApiResources = new();
-    private readonly List<ApiScope> internalApiScopes = new();
-    private readonly List<Client> internalClients = new();
-    private readonly List<IdentityResource> internalIdentityResources = new();
+    private readonly List<ApiResource> internalApiResources = [];
+    private readonly List<ApiScope> internalApiScopes = [];
+    private readonly List<Client> internalClients = [];
+    private readonly List<IdentityResource> internalIdentityResources = [];
 
     private Func<IServiceCollection, IIdentityServerBuilder>? internalIdentityServerBuilder;
     private Action<IdentityServerOptions> internalIdentityServerOptionsBuilder;

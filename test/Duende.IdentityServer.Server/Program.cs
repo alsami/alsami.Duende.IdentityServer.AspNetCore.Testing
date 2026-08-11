@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore;
-
+﻿
 namespace Duende.IdentityServer.Server;
 
 public static class Program
@@ -10,10 +9,10 @@ public static class Program
         await host.RunAsync();
     }
 
-    public static IWebHostBuilder CreateWebHostBuilder(string[] _)
+    private static IHostBuilder CreateWebHostBuilder(string[] args)
     {
-        return WebHost
-            .CreateDefaultBuilder()
-            .UseStartup<Startup>();
+        return Host
+            .CreateDefaultBuilder(args)
+            .ConfigureWebHost(webHost => webHost.UseStartup<Startup>());
     }
 }

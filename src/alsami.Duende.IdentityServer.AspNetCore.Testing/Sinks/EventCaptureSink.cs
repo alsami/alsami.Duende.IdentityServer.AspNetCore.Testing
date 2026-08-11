@@ -13,7 +13,7 @@ internal class EventCaptureSink : IEventSink
         this.identityServerEventCaptureStore = identityServerEventCaptureStore;
     }
 
-    public Task PersistAsync(Event evt)
+    public Task PersistAsync(Event evt, CancellationToken ct)
     {
         this.identityServerEventCaptureStore.AddEvent(evt);
         return Task.CompletedTask;
